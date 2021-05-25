@@ -1,0 +1,10 @@
+.grid_obras {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  grid-gap: var(--spacing-900);
+  padding: var(--spacing-200);
+}

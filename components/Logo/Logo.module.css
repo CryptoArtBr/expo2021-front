@@ -1,0 +1,5 @@
+.logo {
+  font-family: var(--font-crypto-font);
+  text-transform: uppercase;
+  font-size: var(--spacing-700);
+}

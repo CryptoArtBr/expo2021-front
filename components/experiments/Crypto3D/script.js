@@ -1,38 +1,58 @@
-var text = "CryptoArtBr";
+import * as THREE from 'three'
 
-var scene, renderer, camera, container;
-var torus, group;
+import state from './state'
+import { DinamicText } from './Elements/DinamicText'
 
-function init(){
+let scene, renderer, container, torus, material, group, dinamicText, camera;
+
+export const setup = () => {
+	/**
+	 * Scene
+	 */
+	scene = new THREE.Scene();
+
+	renderer, container;
+	torus;
+
+	/**
+	 * Material
+	 */
+	material = new THREE.MeshNormalMaterial();
+
+	/**
+	 * Objects
+	 */
+	group = new THREE.Group();
+	scene.add( group );
+
+	dinamicText = new DinamicText(state.text, group, material);
+
+	/**
+	 * Camera
+	 */
+	camera	= new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 1500 );
+	camera.position.set( 0, 600, 700 );
+	camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+	scene.add(camera);
+}
+
+export const init = (renderCanvas) => {
+	container = renderCanvas
 
 	renderer = new THREE.WebGLRenderer({
 		antialias		: true,
 	});
 	renderer.setClearColor( 0xffff00 );
 
-
 	container = document.getElementById('container');
 
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth * 0.9, window.innerHeight );
 	container.appendChild(renderer.domElement);
-
-	scene = new THREE.Scene();
-
-	camera	= new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 1500 );
-	camera.position.set( 0, 400, 700 );
-	camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
-	scene.add(camera);
-
-	group = new THREE.Group();
-	scene.add( group );
 
 
 	var geometry	= new THREE.TorusGeometry( 150, 30, 32, 32 );
-	material		= new THREE.MeshNormalMaterial();
-	torus			= new THREE.Mesh( geometry, material );
+	torus	= new THREE.Mesh( geometry, material );
 	scene.add( torus );
-
-	loadFont();
 
 	animate();
 
@@ -60,47 +80,6 @@ function render() {
 	renderer.render( scene, camera );
 }
 
-
-
-/**
-Text functions
-**/
-const height = 20, size = 30, curveSegments = 4, bevelThickness = 2, bevelSize = 1.5, hover = 30;
-var font, textMesh1, material;
-
-function loadFont() {
-	const loader = new THREE.FontLoader();
-	loader.load( 'fonts/optimer_bold.typeface.json', function ( response ) {
-		font = response;
-		createText();
-	});
-}
-
-function createText() {
-	if(textMesh1) group.remove( textMesh1 );
-
-	textGeo = new THREE.TextGeometry(text, {
-		font: font,
-		size: size,
-		height: height,
-		curveSegments: curveSegments,
-		bevelThickness: bevelThickness,
-		bevelSize: bevelSize,
-		bevelEnabled: true
-
-	});
-
-	textGeo.computeBoundingBox();
-
-	textMesh1 = new THREE.Mesh( textGeo, material );
-
-	const centerOffset = - 0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
-	textMesh1.position.x = centerOffset;
-	
-	group.add( textMesh1 );
-
-}
-
 /**
 Key pressing
 **/
@@ -111,8 +90,8 @@ function onDocumentKeyPress( event ) {
 		event.preventDefault();
 	} else {
 		const ch = String.fromCharCode( keyCode );
-		text += ch;
-		createText();
+		state.text += ch;
+		dinamicText.updateText(state.text);
 	}
 }
 
@@ -122,8 +101,8 @@ function onDocumentKeyDown( event ) {
 	// backspace
 	if ( keyCode == 8 ) {
 		event.preventDefault();
-		text = text.substring( 0, text.length - 1 );
-		createText();
+		state.text = state.text.substring( 0, state.text.length - 1 );
+		dinamicText.updateText(state.text);
 		return false;
 	}
 }
@@ -137,8 +116,8 @@ let targetRotationOnPointerDown = 0;
 let pointerX = 0;
 let pointerXOnPointerDown = 0;
 
-let windowHalfX = window.innerWidth / 2;
 function onPointerDown( event ) {
+	let windowHalfX = window.innerWidth / 2;
 	if ( event.isPrimary === false ) return;
 	pointerXOnPointerDown = event.clientX - windowHalfX;
 	targetRotationOnPointerDown = targetRotation;
@@ -147,17 +126,14 @@ function onPointerDown( event ) {
 }
 
 function onPointerMove( event ) {
+	let windowHalfX = window.innerWidth / 2;
 	if ( event.isPrimary === false ) return;
 	pointerX = event.clientX - windowHalfX;
 	targetRotation = targetRotationOnPointerDown + ( pointerX - pointerXOnPointerDown ) * 0.02;
 }
 
-function onPointerUp() {
+function onPointerUp(event) {
 	if ( event.isPrimary === false ) return;
 	document.removeEventListener( 'pointermove', onPointerMove );
 	document.removeEventListener( 'pointerup', onPointerUp );
 }
-
-document.addEventListener("DOMContentLoaded", function(event) {
-	init();
-});

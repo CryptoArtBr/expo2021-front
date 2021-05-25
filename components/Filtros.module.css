@@ -1,0 +1,19 @@
+.filtros {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro_select {
+  margin: var(--spacing-400) 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .filtros {
+    flex-direction: row;
+  }
+
+  .filtro_select {
+    margin: 0 var(--spacing-400);
+  }
+}

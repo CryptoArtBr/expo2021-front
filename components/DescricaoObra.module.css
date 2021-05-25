@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-layout-100);
+  padding: var(--spacing-400);
+  margin: var(--spacing-300) 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

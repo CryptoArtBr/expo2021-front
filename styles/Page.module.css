@@ -1,0 +1,38 @@
+.container {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex_row,
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--spacing-999);
+  padding: 0;
+  width: 100%;
+}
+
+.flex_row {
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-color: var(--color-layout-500);
+}
+
+.colecoes_btn {
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+}
+
+@media only screen and (min-width: 600px) {
+  .main {
+    padding: var(--spacing-400);
+  }
+}

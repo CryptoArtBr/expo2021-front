@@ -1,0 +1,13 @@
+.galeria {
+  flex-grow: 1;
+  overflow: auto;
+  overflow-x: scroll;
+}
+
+.galeria::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria__obras {
+  display: flex;
+}

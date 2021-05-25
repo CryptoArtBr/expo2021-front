@@ -1,0 +1,35 @@
+.nav_button,
+.secondary_button,
+.button {
+  font-size: 18px;
+  white-space: nowrap;
+  background-color: var(--interactive-color);
+  height: var(--spacing-900);
+  padding: 0 var(--spacing-700);
+  border-radius: var(--spacing-800);
+  border: 1px solid var(--interactive-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-inverted);
+  cursor: pointer;
+}
+
+.secondary_button {
+  background-color: var(--base-color);
+  color: var(--interactive-color);
+}
+
+.nav_button {
+  font-size: 40px;
+  padding: 0 var(--spacing-700) var(--spacing-400);
+  border-radius: 0;
+  display: inline-flex;
+  font-family: var(--font-crypto-icon);
+}
+
+.nav_button:hover {
+  background: var(--cor-escuros-100);
+  border: 1px solid var(--cor-escuros-100);
+  color: white;
+}
