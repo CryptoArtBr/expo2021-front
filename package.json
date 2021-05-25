@@ -2,12 +2,14 @@
   "name": "cabra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://cryptoartbr.github.io/expo2021-front",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s ./public",
+    "deploy-storybook": "build-storybook -s ./public && gh-pages -d storybook-static && rm -rf storybook-static"
   },
   "dependencies": {
     "next": "10.1.3",
