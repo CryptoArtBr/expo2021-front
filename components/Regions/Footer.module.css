@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-layout-100);
+  padding: var(--spacing-900) 0;
+}
+
+.logo_container {
+  border-bottom: 1px solid var(--color-layout-500);
+  padding: 0 0 var(--spacing-400);
+}
+
+.logo img {
+  width: 256px;
+}
+
+.link {
+  display: block;
+}
+
+.title {
+  white-space: nowrap;
+  font-weight: 600;
+}

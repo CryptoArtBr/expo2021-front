@@ -1,0 +1,15 @@
+
+.info_box {
+  min-width: 300px;
+  width: 300px;
+  flex-basis: 300px;
+  color: var(--color-layout-500);
+}
+
+.artist_link::after {
+  content: ' | ';
+}
+
+.artist_link:last-child:after {
+  content: '';
+}

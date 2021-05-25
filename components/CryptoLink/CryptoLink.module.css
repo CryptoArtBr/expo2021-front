@@ -1,0 +1,11 @@
+.crypto_link {
+  font-size: 20px;
+  margin-top: var(--spacing-400);
+}
+
+.crypto_link:before {
+  color: var(--primary-color);
+  content: 'i';
+  font-family: var(--font-crypto-icon);
+  margin: 0 var(--spacing-300) 0 var(--spacing-200);
+}

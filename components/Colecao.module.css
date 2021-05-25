@@ -1,0 +1,28 @@
+.colecao {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-layout-100);
+  padding: var(--spacing-400);
+  margin: var(--spacing-300) 0;
+}
+
+.colecao__info_box {
+  min-width: 300px;
+  flex-basis: 300px;
+  color: var(--color-layout-500);
+}
+
+.artist_link::after {
+  content: ' | ';
+}
+
+.artist_link:last-child:after {
+  content: '';
+}
+
+@media only screen and (min-width: 600px) {
+  .colecao {
+    flex-direction: row;
+  }
+}
