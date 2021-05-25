@@ -21,3 +21,9 @@ yarn dev
 ```
 yarn storybook
 ```
+
+### deploy storybook
+
+```
+yarn deploy-storybook
+```
