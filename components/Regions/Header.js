@@ -9,6 +9,8 @@ import Button from '../Button/Button'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return <header className={`${styles.header} ${isOpen && styles.header_active}`}>
     <div className={styles.header_wrapper}>
       <div className={styles.logo_container}>

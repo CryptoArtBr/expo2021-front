@@ -1,0 +1,31 @@
+.user_box {
+  border: 1px solid var(--cor-escuros-10);
+  border-radius: var(--spacing-300);
+  padding: var(--spacing-700) var(--spacing-800);
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.user_box__collapsed {
+  overflow: hidden;
+  height: 0;
+}
+
+.user_box__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_box__formset {
+  margin: 0 0 var(--spacing-500)
+}
+
+.user_box__formset label {
+  display: block;
+  margin: 0 0 var(--spacing-300);
+}
+
+.user_box__formset input {
+  font-size: 20px;
+  padding: var(--spacing-300);
+}
