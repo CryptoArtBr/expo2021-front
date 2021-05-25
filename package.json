@@ -9,8 +9,7 @@
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "build-storybook && gh-pages -d storybook-static && rm -rf storybook-static"
   },
   "dependencies": {
     "next": "10.1.3",
