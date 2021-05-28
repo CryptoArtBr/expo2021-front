@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
 
-import styles from '../styles/Page.module.css'
-import Crypto3D from '../components/experiments/Crypto3D/Crypto3D'
+import styles from '../../styles/Page.module.css'
+import UserBox from '../../components/UserBox/UserBox'
 
 export default function Home() {
   return (
@@ -11,11 +9,9 @@ export default function Home() {
       <Head>
         <title>🐐 CriptoArtBr 2021 🐐</title>
       </Head>
-      <Header />
       <main className={styles.main}>
-        <Crypto3D />
+        <UserBox />
       </main>
-      <Footer />
     </div>
   )
 }

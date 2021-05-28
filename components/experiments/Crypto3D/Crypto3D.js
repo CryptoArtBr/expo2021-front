@@ -1,6 +1,6 @@
 import {useRef, useLayoutEffect} from 'react'
 
-import {init, setup} from './script'
+import {init, setup, end} from './script'
 
 export default () => {
   const canvasEl = useRef(null)
@@ -9,6 +9,9 @@ export default () => {
     if (canvasEl.current) {
       setup()
       init()
+    }
+    return () => {
+      end()
     }
   },[])
 

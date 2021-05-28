@@ -1,14 +1,21 @@
 import { useState } from 'react'
+import { useRouter } from'next/router'
 
 import Link from 'next/link'
 import styles from './Header.module.css'
-import Logo from '../Logo/Logo'
-import CloseMenuSVG from '../SVG/CloseMenuSVG'
-import HamburguerMenuSVG from '../SVG/HamburguerMenuSVG'
-import Button from '../Button/Button'
+import Logo from '../../components/Logo/Logo'
+import CloseMenuSVG from '../../components/SVG/CloseMenuSVG'
+import HamburguerMenuSVG from '../../components/SVG/HamburguerMenuSVG'
+import Button from '../../components/Button/Button'
 
-const Header = () => {
+const stub = (router) => router.push('/auth/login?returnTo=/')
+
+export const Header = ({isAuthenticated, login=stub, logout=stub, signup=stub}) => {
+  console.log(isAuthenticated)
   const [isOpen, setIsOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const router = useRouter()
+
   return <header className={`${styles.header} ${isOpen && styles.header_active}`}>
     <div className={styles.header_wrapper}>
       <div className={styles.logo_container}>
@@ -34,12 +41,14 @@ const Header = () => {
           </Link>
         </nav>
         <div className={styles.menu__items}>
-          <Button onClick={() => {}} type="secondary">inscreva-se</Button>
-          <Button onClick={() => {}}>entrar</Button>
+          {isAuthenticated ? 
+            <Button onClick={() => logout(router)}>sair</Button> : 
+            <>
+              <Button onClick={() => signup(router)} type="secondary">inscreva-se</Button>
+              <Button onClick={() => login(router)}>entrar</Button>
+            </>}
         </div>
       </div>
     </div>
   </header>
 }
-
-export default Header
