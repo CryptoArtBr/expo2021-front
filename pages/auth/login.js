@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import styles from '../styles/Page.module.css'
-import UserBox from '../components/UserBox/UserBox'
+import styles from '../../styles/Page.module.css'
+import UserBox from '../../components/UserBox/UserBox'
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../components/Regions/Header'
-import Footer from '../components/Regions/Footer'
+import Header from '../regions/Header'
+import Footer from '../regions/Footer/Footer'
 import JogoCryptoBrick from '../components/experiments/JogoCryptoBrick/JogoCryptoBrick'
 
 import styles from '../styles/Page.module.css'

@@ -65,6 +65,12 @@ export const init = (renderCanvas) => {
 	document.addEventListener( 'keydown', onDocumentKeyDown );
 }
 
+export const end = () => {
+	container.removeEventListener( 'pointerdown', onPointerDown );
+	document.removeEventListener( 'keypress', onDocumentKeyPress );
+	document.removeEventListener( 'keydown', onDocumentKeyDown );
+}
+
 function animate() {
 	requestAnimationFrame( animate );
 	render();

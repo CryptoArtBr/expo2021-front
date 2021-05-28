@@ -16,16 +16,17 @@
   flex-direction: column;
 }
 
-.user_box__formset {
-  margin: 0 0 var(--spacing-500)
+.user_box__field {
+  margin: 0 0 var(--spacing-500);
+  border: none;
 }
 
-.user_box__formset label {
+.user_box__field label {
   display: block;
   margin: 0 0 var(--spacing-300);
 }
 
-.user_box__formset input {
+.user_box__field input {
   font-size: 20px;
   padding: var(--spacing-300);
 }
