@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useReducer } from 'react'
+import { useCookies } from 'react-cookie'
 import { initialAuthState } from './auth-state'
 import { reducer } from './reducer'
 import {
@@ -10,24 +11,21 @@ import { AuthContext } from './auth-context'
 import { useRouter } from 'next/router'
 import { resolveReturnToUrl } from './resolver-return-to-url'
 
+const CRYPTO_PERSON_COOKIE = 'crypto-person'
+
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialAuthState)
   const router = useRouter()
+  const [userCookie, setUserCookie, removeUserCookie] = useCookies([CRYPTO_PERSON_COOKIE]);
 
   // Subscribe to user on mount
   // Because this sets state in the callback it will cause any
   // component that utilizes this hook to re-render with the
   // latest auth object.
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged((user) => {
-      if (user) {
-        dispatch({ type: 'AUTHENTICATED', user })
-      } else {
-        dispatch({ type: 'UNAUTHENTICATED' })
-      }
-    })
-    // Cleanup subscription on unmount
-    return () => unsubscribe()
+    if (userCookie[CRYPTO_PERSON_COOKIE]) {
+      dispatch({ type: 'AUTHENTICATED', user: userCookie[CRYPTO_PERSON_COOKIE] })
+    }
   }, [])
 
   const signIn = useCallback(async (credentials) => {
@@ -37,6 +35,7 @@ export const AuthProvider = ({ children }) => {
       const user = data
 
       if (user) {
+        setUserCookie(CRYPTO_PERSON_COOKIE, user, {path: '/'})
         dispatch({ type: 'AUTHENTICATED', user })
       } else {
         dispatch({ type: 'UNAUTHENTICATED' })
@@ -52,6 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const signOut = useCallback(async () => {
     try {
+      removeUserCookie(CRYPTO_PERSON_COOKIE)
       await apiSignOut()
       dispatch({ type: 'UNAUTHENTICATED' })
     } catch (error) {
