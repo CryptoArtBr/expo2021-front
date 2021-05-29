@@ -7,16 +7,17 @@ import Logo from '../../components/Logo/Logo'
 import CloseMenuSVG from '../../components/SVG/CloseMenuSVG'
 import HamburguerMenuSVG from '../../components/SVG/HamburguerMenuSVG'
 import Button from '../../components/Button/Button'
+import UserBox from '../../components/UserBox/UserBox'
 
 const stub = (router) => router.push('/auth/login?returnTo=/')
 
 export const Header = ({isAuthenticated, login=stub, logout=stub, signup=stub}) => {
-  console.log(isAuthenticated)
   const [isOpen, setIsOpen] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const router = useRouter()
 
-  return <header className={`${styles.header} ${isOpen && styles.header_active}`}>
+  return (<>
+  <header className={`${styles.header} ${isOpen && styles.header_active}`}>
     <div className={styles.header_wrapper}>
       <div className={styles.logo_container}>
         <Logo href="/" />
@@ -45,10 +46,12 @@ export const Header = ({isAuthenticated, login=stub, logout=stub, signup=stub}) 
             <Button onClick={() => logout(router)}>sair</Button> : 
             <>
               <Button onClick={() => signup(router)} type="secondary">inscreva-se</Button>
-              <Button onClick={() => login(router)}>entrar</Button>
+              <Button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>entrar</Button>
             </>}
         </div>
       </div>
     </div>
   </header>
+  {!isAuthenticated && isDrawerOpen ? <div className={styles.header_drawer}> <UserBox /> </div> : null}
+  </>)
 }
