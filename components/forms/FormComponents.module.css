@@ -1,0 +1,36 @@
+.form_section {
+  margin: var(--spacing-950) 0 0 0;
+}
+
+.label {
+  font-size: 16px;
+  display: block;
+  margin: 0 0 var(--spacing-300);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border-radius: var(--spacing-200);
+  padding: var(--spacing-300) var(--spacing-500);
+  margin: 0 0 var(--spacing-700) 0;
+}
+
+.textarea {
+  width: 100%;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0 0 var(--spacing-400) 0;
+}
+
+.checkbox__box {
+  display: inline-block;
+  margin: 0 var(--spacing-300) 0 0;
+}
+
+.checkbox__label {
+  display: inline-block;
+}

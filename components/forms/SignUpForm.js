@@ -1,108 +1,114 @@
 import Button from "../Button/Button"
-import Title from "../typography/Title"
+import { MainTitle, SectionTitle } from "../typography/Title"
+import { FormSection, Input, Label, Checkbox, Textarea } from "./FormComponents"
 
 const SignUpForm = () => {
-  return <div>
-    <Title>CRIE SUA CONTA</Title>
-    <div>
-      <h2>sobre voce</h2>
+  return <div className="row">
+    <div className="col">
       
-      <label>Nome completo ou artístico</label>
-      <input></input>
+      <MainTitle>CRIE SUA CONTA</MainTitle>
+      <FormSection>
+        <SectionTitle>sobre voce</SectionTitle>
+        
+        <div className='col-12'>
+          <Input label='Nome completo ou artístico'/>
+        </div>
 
-      <label>Estado</label>
-      <select>
-        <option>pernambuco</option>
-        <option>rio de janeiro</option>
-      </select>
+        <div className='col-6'>
+          <Label>Estado</Label>
+          <select>
+            <option>pernambuco</option>
+            <option>rio de janeiro</option>
+          </select>
+        </div>
 
-      <label>Cidade</label>
-      <select>
-        <option>recife</option>
-        <option>nossa senhora do o</option>
-      </select>
-    </div>
-    
-    <div>
-      <h2>redes sociais</h2>
-
-      <label>Instagram</label>
-      <input />
-
-      <label>Twitter</label>
-      <input />
-
-      <label>Site</label>
-      <input />
-
-      <label>Outro</label>
-      <input />
-    </div>
-
-    <div>
-      <h2>Sobre sua Arte</h2>
+        <div className='col-6'>
+          <Label>Cidade</Label>
+          <select>
+            <option>recife</option>
+            <option>nossa senhora do o</option>
+          </select>
+        </div>
+      </FormSection>
       
-      <h3>Escolha 3 categorias abaixo</h3>
+      <FormSection>
+        <SectionTitle>redes sociais</SectionTitle>
 
-      
-      <label>3D</label>
-      <input type='checkbox' />
+        <div className='col-6'>
+          <Input label='Instagram'/>
+          <Input label='Twitter'/>
+        </div>
 
-      <label>Ativismo</label>
-      <input type='checkbox' />
+        <div className='col-6'>
+          <Input label='Site'/>
+          <Input label='Outro'/>
+        </div>
+      </FormSection>
 
-      <label>Audiovisual</label>
-      <input type='checkbox' />
+      <FormSection>
+        <SectionTitle>Sobre sua Arte</SectionTitle>
+        
+        <h3>Escolha 3 categorias abaixo</h3>
 
-      <label>Desenho</label>
-      <input type='checkbox' />
+        <div className='col-4'>
+          <Checkbox label='3D'/>
 
-      <label>Fotografia</label>
-      <input type='checkbox' />
+          <Checkbox label='Ativismo'/>
 
-      <label>Grafite</label>
-      <input type='checkbox' />
+          <Checkbox label='Audiovisual'/>
 
-      <label>Ilustração</label>
-      <input type='checkbox' />
+          <Checkbox label='Desenho'/>
+        </div>
 
-      <label>Literatura</label>
-      <input type='checkbox' />
+        <div className='col-4'>
+          <Checkbox label='Fotografia'/>
 
-      <label>Música</label>
-      <input type='checkbox' />
+          <Checkbox label='Grafite'/>
 
-      <label>Performance</label>
-      <input type='checkbox' />
+          <Checkbox label='Ilustração'/>
 
-      <label>Pintura</label>
-      <input type='checkbox' />
+          <Checkbox label='Literatura'/>
+        </div>
 
-      <label>Programação</label>
-      <input type='checkbox' />
+        <div className='col-4'>
+          <Checkbox label='Música'/>
 
+          <Checkbox label='Performance'/>
+
+          <Checkbox label='Pintura'/>
+
+          <Checkbox label='Programação'/>
+        </div>
+
+      </FormSection>
+
+      <FormSection>
+        <SectionTitle>Sua apresentação</SectionTitle>
+
+        <div className='col-12'>
+          <Textarea></Textarea>
+          <Label>Bio</Label>
+        </div>
+
+        <div className='col-12'>
+          <Input label='Video apresentação'/>
+        </div>
+      </FormSection>
+
+      <FormSection>
+        <SectionTitle>Acesso</SectionTitle>
+
+        <div className='col-12'>
+          <Input type='email' label='email'/>
+        </div>
+        <div className='col-12'>
+          <Input type='password' label='senha'/>
+        </div>
+      </FormSection>
+      <div className='col-12'>
+        <Button>concluir cadastro</Button>
+      </div>
     </div>
-
-    <div>
-      <h2>Sua apresentação</h2>
-
-      <label>Bio</label>
-      <textarea />
-
-      <label>Video apresentação</label>
-      <input />
-    </div>
-
-    <div>
-      <h2>Acesso</h2>
-
-      <label>email</label>
-      <input type='email' />
-
-      <label>senha</label>
-      <input type='password'/>
-    </div>
-    <Button>concluir cadastro</Button>
   </div>
 }
 

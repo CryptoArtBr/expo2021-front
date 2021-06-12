@@ -1,3 +1,8 @@
 .main_title {
   font-family: var(--font-crypto-font);
+  font-size: 36px;
+}
+
+.section_title {
+  font-size: 18px;
 }
