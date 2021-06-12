@@ -4,6 +4,7 @@ import Footer from '../../regions/Footer/Footer'
 
 import styles from '../../styles/Page.module.css'
 import { SignUpForm } from '../../components/forms/SignUpForm/SignUpForm'
+import { BGChapado } from '../../components/experiments/Illustras/BGChapado'
 
 export default function SignUp() {
   return (
@@ -13,6 +14,7 @@ export default function SignUp() {
       </Head>
       <Header />
       <main className={styles.main}>
+        <BGChapado />
         <div className="container">
           <div className="row">
             <div className="col-6">
