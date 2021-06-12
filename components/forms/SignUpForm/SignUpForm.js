@@ -254,6 +254,7 @@ export const SignUpForm = () => {
             <Textarea
               value={formData.bio}
               onChange={(e) => formDataUpdate('bio', e.target.value)}
+              rows="8"
               label="Bio"
             ></Textarea>
           </div>
