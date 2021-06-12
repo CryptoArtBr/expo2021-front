@@ -8,7 +8,7 @@ import {
   Textarea,
   Select,
   Option,
-} from '../FormComponents'
+} from '../components/index'
 
 import { cidades_estados } from '../rawdata/cidades-estados'
 import { initialData } from './data'

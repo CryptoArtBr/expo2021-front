@@ -1,0 +1,7 @@
+.input {
+  display: block;
+  width: 100%;
+  border-radius: var(--spacing-200);
+  padding: var(--spacing-300) var(--spacing-500);
+  margin: 0 0 var(--spacing-700) 0;
+}
