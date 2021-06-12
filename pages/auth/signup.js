@@ -4,7 +4,7 @@ import Footer from '../../regions/Footer/Footer'
 
 import styles from '../../styles/Page.module.css'
 import { SignUpForm } from '../../components/forms/SignUpForm/SignUpForm'
-import { BGChapado } from '../../components/experiments/Illustras/BGChapado'
+import { BGChapado } from '../../components/experiments/Ilustras/BGChapado'
 
 export default function SignUp() {
   return (
