@@ -34,3 +34,13 @@
 .checkbox__label {
   display: inline-block;
 }
+
+.select {
+  width: 100%;
+  padding: var(--spacing-300);
+  border-radius: var(--spacing-200);
+}
+
+.option:disabled {
+  color: gray;
+}

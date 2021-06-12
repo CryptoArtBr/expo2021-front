@@ -3,7 +3,7 @@ import Header from '../../regions/Header'
 import Footer from '../../regions/Footer/Footer'
 
 import styles from '../../styles/Page.module.css'
-import SignUpForm from '../../components/forms/SignUpForm'
+import { SignUpForm } from '../../components/forms/SignUpForm/SignUpForm'
 
 export default function SignUp() {
   return (
