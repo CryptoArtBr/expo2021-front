@@ -9,7 +9,23 @@ export default {
 
 const Template = ({ ...args }) => <Input {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Empty = Template.bind({})
+Empty.args = {
   label: 'label',
+  placeholder: 'aqui vai alguma coisa',
+  error: false,
+}
+
+export const WithText = Template.bind({})
+WithText.args = {
+  label: 'label',
+  placeholder: 'aqui vai alguma coisa',
+  value: 'aqui já tem alguma coisa',
+}
+
+export const WithError = Template.bind({})
+WithError.args = {
+  label: 'label',
+  placeholder: 'aqui vai alguma coisa',
+  error: true,
 }

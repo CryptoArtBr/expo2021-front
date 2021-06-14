@@ -1,7 +1,28 @@
+.input_wrapper {
+  position: relative;
+}
+
 .input {
   display: block;
   width: 100%;
   border-radius: var(--spacing-200);
   padding: var(--spacing-300) var(--spacing-500);
   margin: 0 0 var(--spacing-700) 0;
+  border: 1px solid var(--cor-escuros-50);
+}
+
+.input:focus {
+  border: 1px solid var(--interactive-color);
+  outline: none;
+}
+
+.input_error,
+.input_error:focus {
+  border: 1px solid var(--color-error);
+}
+
+.input_wrapper svg {
+  position: absolute;
+  bottom: 7px;
+  right: var(--spacing-400);
 }
