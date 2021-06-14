@@ -13,9 +13,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: var(--spacing-999);
+  margin-top: var(--header-height);
   padding: 0;
   width: 100%;
+}
+
+.main {
+  position: relative;
 }
 
 .flex_row {

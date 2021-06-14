@@ -10,8 +10,9 @@ import Button from '../../components/Button/Button'
 import UserBox from '../../components/UserBox/UserBox'
 
 const stub = (router) => router.push('/auth/login?returnTo=/')
+const signupStub = (router) => router.push('/auth/signup?returnTo=/')
 
-export const Header = ({isAuthenticated, login=stub, logout=stub, signup=stub}) => {
+export const Header = ({isAuthenticated, login=stub, logout=stub, signup=signupStub}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const router = useRouter()

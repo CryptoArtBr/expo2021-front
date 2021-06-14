@@ -2,7 +2,7 @@
   width: 100%;
   background-color: var(--base-color);
   border-bottom: 1px solid var(--cor-escuros-75);
-  height: 100px;
+  height: var(--header-height);
   overflow: hidden;
   transition: height 0.3s ease-in;
   position: fixed;
@@ -29,6 +29,7 @@
   position: fixed;
   top: 100px;
   right: 0;
+  z-index: 1;
 }
 
 .logo_container {
@@ -71,10 +72,6 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .header {
-    height: 100px;
-  }
-
   .header_wrapper {
     max-width: var(--max-width);
     margin: auto;
@@ -87,7 +84,6 @@
   .header_active {
     height: 100px;
   }
-  
 
   .menu {
     align-items: center;

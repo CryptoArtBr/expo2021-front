@@ -1,20 +1,19 @@
 :root {
   /* definição de cores */
-  --crypto-purple: #7879F1;
-  --crypto-pink: #FF5BB4;
-  --crypto-pink-light: #FFADD9;
-  --crypto-pink-lighter: #FFEFF7;
-  --crypto-green: #06FF6A;
-  --crypto-green-light: #83FFB4;
-  --crypto-green-lighter: #E6FFF0;
+  --crypto-purple: #7879f1;
+  --crypto-pink: #ff5bb4;
+  --crypto-pink-light: #ffadd9;
+  --crypto-pink-lighter: #ffeff7;
+  --crypto-green: #06ff6a;
+  --crypto-green-light: #83ffb4;
+  --crypto-green-lighter: #e6fff0;
 
-  --crypto-gray-100: #FAF8F9;
-  --crypto-gray-200: #E8E8E8;
-  --crypto-gray-300: #BABABA;
+  --crypto-gray-100: #faf8f9;
+  --crypto-gray-200: #e8e8e8;
+  --crypto-gray-300: #bababa;
   --crypto-gray-400: #484848;
   --crypto-gray-500: #313131;
-  --crypto-gray-600: #1A1A1A;
-    
+  --crypto-gray-600: #1a1a1a;
 
   /* variáveis do tema */
 
@@ -26,7 +25,7 @@
 
   --primary-color-100: var(--crypto-green-lighter);
   --secondary-color-100: var(--crypto-pink-lighter);
-  
+
   --cor-escuros-10: var(--crypto-gray-200);
   --cor-escuros-25: var(--crypto-gray-300);
   --cor-escuros-50: var(--crypto-gray-400);
@@ -37,8 +36,8 @@
   --cor-claros-primaria: var(--crypto-green-lighter);
   --cor-claros-secundaria: var(--crypto-pink-lighter);
 
-  --font-crypto-font: "Crypto-type-Regular";
-  --font-crypto-icon: "Crypto-icons-Regular";
+  --font-crypto-font: 'Crypto-type-Regular';
+  --font-crypto-icon: 'Crypto-icons-Regular';
 
   --base-color: #ffffff;
   --text-color: #000000;
@@ -48,11 +47,11 @@
   --primary-color: var(--crypto-purple);
   --secondary-color: var(--crypto-pink);
 
-  --color-layout-100: #E8E8E8;
-  --color-layout-200: #BABABA;
+  --color-layout-100: #e8e8e8;
+  --color-layout-200: #bababa;
   --color-layout-300: #484848;
   --color-layout-400: #313131;
-  --color-layout-500: #1A1A1A;
+  --color-layout-500: #1a1a1a;
 
   --color-success: green;
   --color-warning: rgb(189, 148, 14);
@@ -69,6 +68,8 @@
   --spacing-900: 42px;
   --spacing-950: 64px;
   --spacing-999: 128px;
+
+  --header-height: 100px;
 
   /* GRID */
   --max-width: 1280px;
