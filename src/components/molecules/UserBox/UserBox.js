@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useAuth } from '../../services/auth'
+import { useAuth } from '../../../services/auth'
 
-import Button from '../../atoms/Button/Button'
+import { Button } from '../../atoms'
 import styles from './UserBox.module.css'
 
-const UserBox = ({ open = true }) => {
+export const UserBox = ({ open = true }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const auth = useAuth()
@@ -62,5 +62,3 @@ const UserBox = ({ open = true }) => {
     </div>
   )
 }
-
-export default UserBox

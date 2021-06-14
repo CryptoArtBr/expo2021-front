@@ -1,12 +1,15 @@
-import { useHorizontalScroll } from "../../utils/useSideScroll";
+import { useHorizontalScroll } from '../../../utils/useSideScroll'
 import styles from './GaleriaHorizontal.module.css'
-import Card from '../Card/Card'
+import { Card } from '../../atoms'
 
-export default function GaleriaHorizontal ({obras = []}) {
+export const GaleriaHorizontal = ({ obras = [] }) => {
   const colecaoElement = useHorizontalScroll(null)
-  return <div ref={colecaoElement} className={styles.galeria}>
+  return (
+    <div ref={colecaoElement} className={styles.galeria}>
       <div className={styles.galeria__obras}>
-          {obras.map && obras.map(obra => <Card key={`obra-${obra.slug}`} item={obra} />)}
+        {obras.map &&
+          obras.map((obra) => <Card key={`obra-${obra.slug}`} item={obra} />)}
       </div>
     </div>
+  )
 }

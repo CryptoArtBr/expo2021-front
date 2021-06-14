@@ -18,6 +18,7 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       include: [
         path.resolve(__dirname, '../src/components/atoms'),
+        path.resolve(__dirname, '../src/components/molecules'),
         path.resolve(__dirname, '../stories'),
       ],
       use: [
@@ -45,7 +46,10 @@ module.exports = {
     // Then we tell webpack what to do with CSS modules
     newConfig.module.rules.push({
       test: /\.module\.css$/,
-      include: [path.resolve(__dirname, '../src/components/atoms')],
+      include: [
+        path.resolve(__dirname, '../src/components/atoms'),
+        path.resolve(__dirname, '../src/components/molecules'),
+      ],
       use: [
         'style-loader',
         {

@@ -1,6 +1,5 @@
 import { useRef, useState, useLayoutEffect } from 'react'
-import Button from '../../atoms/Button/Button'
-import CryptoLink from '../../atoms/CryptoLink/CryptoLink'
+import { Button, CryptoLink } from '../../atoms'
 import styles from './GaleriaCarrossel.module.css'
 
 const CarrosselItem = ({ title, description, image, link }) => {
@@ -36,7 +35,7 @@ const CarrosselItems = ({ items = [], offset }) => {
   )
 }
 
-export default ({ items = [] }) => {
+export const GaleriaCarrossel = ({ items = [] }) => {
   const [activeItem, setActiveItem] = useState(0)
   const [offset, setOffset] = useState(0)
   const carrosselElement = useRef(null)
