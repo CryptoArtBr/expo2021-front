@@ -3,7 +3,7 @@ import { Header, Footer, Filtros, Colecao } from '../src/components'
 
 import styles from '../src/styles/Page.module.css'
 import { WP_API_ENDPOINT } from '../env'
-import { convertWpPostsToCollections } from '../utils/convertWpData'
+import { convertWpPostsToCollections } from '../src/utils/convertWpData'
 
 const Colecoes = ({ posts = [] }) => {
   const colecoes = convertWpPostsToCollections(posts)
