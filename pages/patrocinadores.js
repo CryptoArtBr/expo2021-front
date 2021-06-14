@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
+import { Header, Footer } from '../src/components'
 
-import styles from '../styles/Page.module.css'
+import styles from '../src/styles/Page.module.css'
 
 export default function Patrocinadores() {
   return (

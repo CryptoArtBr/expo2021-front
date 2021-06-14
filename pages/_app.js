@@ -1,4 +1,4 @@
-import { AuthProvider } from '../services/auth'
+import { AuthProvider } from '../src/services/auth'
 import { CookiesProvider } from 'react-cookie'
 import '../src/styles/globals.css'
 

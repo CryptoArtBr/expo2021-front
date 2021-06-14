@@ -1,14 +1,11 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
+import { Header, Footer, Filtros, Colecao } from '../src/components'
 
-import styles from '../styles/Page.module.css'
-import Filtros from '../components/Filtros'
-import Colecao from '../components/Colecao'
+import styles from '../src/styles/Page.module.css'
 import { WP_API_ENDPOINT } from '../env'
 import { convertWpPostsToCollections } from '../utils/convertWpData'
 
-const Colecoes = ({posts = []}) => {
+const Colecoes = ({ posts = [] }) => {
   const colecoes = convertWpPostsToCollections(posts)
   return (
     <div className={styles.container}>
@@ -18,7 +15,13 @@ const Colecoes = ({posts = []}) => {
       <Header />
       <main className={styles.main}>
         <Filtros />
-        {colecoes.map(colecao => <Colecao key={`colecao-${colecao.autor}`} autor={colecao.autor} obras={colecao.obras}/>)}
+        {colecoes.map((colecao) => (
+          <Colecao
+            key={`colecao-${colecao.autor}`}
+            autor={colecao.autor}
+            obras={colecao.obras}
+          />
+        ))}
       </main>
       <Footer />
     </div>
@@ -26,29 +29,34 @@ const Colecoes = ({posts = []}) => {
 }
 
 export async function getStaticProps() {
-  const posts = await fetch(`${WP_API_ENDPOINT}/posts?_embed`)
-    .then(res => {
-      if (res.status === 200) return res.json()
-      return []
-    })
+  const posts = await fetch(`${WP_API_ENDPOINT}/posts?_embed`).then((res) => {
+    if (res.status === 200) return res.json()
+    return []
+  })
   return {
     props: {
-      posts: posts.map(post => {
-        const categories = (post._embedded && 
+      posts: posts.map((post) => {
+        const categories =
+          post._embedded &&
           post._embedded['wp:term'] &&
-          post._embedded['wp:term'][0]) ? post._embedded['wp:term'][0] : []
-        const mediaurl =  (post._embedded && 
-            post._embedded['wp:featuredmedia'] &&
-            post._embedded['wp:featuredmedia'][0] &&
-            post._embedded['wp:featuredmedia'][0].source_url) ? post._embedded['wp:featuredmedia'][0].source_url : ''
+          post._embedded['wp:term'][0]
+            ? post._embedded['wp:term'][0]
+            : []
+        const mediaurl =
+          post._embedded &&
+          post._embedded['wp:featuredmedia'] &&
+          post._embedded['wp:featuredmedia'][0] &&
+          post._embedded['wp:featuredmedia'][0].source_url
+            ? post._embedded['wp:featuredmedia'][0].source_url
+            : ''
         return {
           title: post.title.rendered,
           slug: post.slug,
           image: mediaurl,
-          categories
+          categories,
         }
-      })
-    }
+      }),
+    },
   }
 }
 

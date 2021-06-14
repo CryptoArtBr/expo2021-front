@@ -1,4 +1,4 @@
-import { useAuth } from '../../services/auth'
+import { useAuth } from '../../../services/auth'
 import { Header as HeaderComponent } from './Header'
 
 export const Header = () => {

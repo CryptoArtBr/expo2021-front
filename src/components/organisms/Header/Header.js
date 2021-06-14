@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 
 import Link from 'next/link'
 import styles from './Header.module.css'
-import { Logo, Button, UserBox } from '../../atoms'
+import { Logo, Button } from '../../atoms'
+import { UserBox } from '../../molecules'
 import CloseMenuSVG from '../../atoms/SVG/CloseMenuSVG'
 import HamburguerMenuSVG from '../../atoms/SVG/HamburguerMenuSVG'
 
