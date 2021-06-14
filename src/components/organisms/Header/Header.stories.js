@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
-import { Header } from './Header';
+import { Header } from './Header'
 
 export default {
-  title: 'Cabra/Regiões/Header',
+  title: 'Cabra/Organisms/Header',
   component: Header,
-};
-
-const Template = ({...args}) => <Header {...args}/>;
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {
-  isAuthenticated: false
 }
 
-export const LoggedIn = Template.bind({});
+const Template = ({ ...args }) => <Header {...args} />
+
+export const LoggedOut = Template.bind({})
+LoggedOut.args = {
+  isAuthenticated: false,
+}
+
+export const LoggedIn = Template.bind({})
 LoggedIn.args = {
-  isAuthenticated: true
+  isAuthenticated: true,
 }

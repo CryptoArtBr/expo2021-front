@@ -3,11 +3,9 @@ import { useRouter } from 'next/router'
 
 import Link from 'next/link'
 import styles from './Header.module.css'
-import Logo from '../components/Logo/Logo'
-import CloseMenuSVG from '../components/SVG/CloseMenuSVG'
-import HamburguerMenuSVG from '../components/SVG/HamburguerMenuSVG'
-import Button from '../components/Button/Button'
-import UserBox from '../components/UserBox/UserBox'
+import { Logo, Button, UserBox } from '../../atoms'
+import CloseMenuSVG from '../../atoms/SVG/CloseMenuSVG'
+import HamburguerMenuSVG from '../../atoms/SVG/HamburguerMenuSVG'
 
 const stub = (router) => router.push('/auth/login?returnTo=/')
 const signupStub = (router) => router.push('/auth/signup?returnTo=/')

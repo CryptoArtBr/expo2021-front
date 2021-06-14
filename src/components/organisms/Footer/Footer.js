@@ -1,8 +1,8 @@
-import Logo from '../../components/Logo/Logo'
+import { Logo } from '../../atoms'
 import styles from './Footer.module.css'
 
-const Footer = () => {
-  return <footer className={styles.footer}>
+export const Footer = () => (
+  <footer className={styles.footer}>
     <div className="container">
       <div className={`row ${styles.logo_container}`}>
         <Logo href="/" />
@@ -38,7 +38,5 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  </footer> 
-}
-
-export default Footer
+  </footer>
+)

@@ -19,6 +19,7 @@ module.exports = {
       include: [
         path.resolve(__dirname, '../src/components/atoms'),
         path.resolve(__dirname, '../src/components/molecules'),
+        path.resolve(__dirname, '../src/components/organisms'),
         path.resolve(__dirname, '../stories'),
       ],
       use: [
@@ -49,6 +50,7 @@ module.exports = {
       include: [
         path.resolve(__dirname, '../src/components/atoms'),
         path.resolve(__dirname, '../src/components/molecules'),
+        path.resolve(__dirname, '../src/components/organisms'),
       ],
       use: [
         'style-loader',
