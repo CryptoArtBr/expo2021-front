@@ -1,7 +1,7 @@
 import styles from './Colecao.module.css'
 import { GaleriaHorizontal, InfoBox } from '../molecules'
 
-export default function Colecao({ autor, obras }) {
+export const Colecao = ({ autor, obras }) => {
   return (
     <div className={styles.colecao}>
       <InfoBox autor={autor}>

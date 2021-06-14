@@ -1,7 +1,7 @@
 import styles from './GridObras.module.css'
 import { Card } from '../atoms'
 
-export default function GridObras() {
+export const GridObras = () => {
   return (
     <div className={styles.grid_obras}>
       {Array.from(Array(10).keys()).map((item, index) => (

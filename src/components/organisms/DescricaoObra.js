@@ -1,7 +1,7 @@
 import styles from './DescricaoObra.module.css'
 import { InfoBox } from '../molecules'
 
-export default function DescricaoObra() {
+export const DescricaoObra = () => {
   return (
     <div className={styles.container}>
       <div>
