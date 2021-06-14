@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import Button from '../../Button/Button'
-import { MainTitle, SectionTitle } from '../../typography/Title'
+import { MainTitle, SectionTitle } from '../../atoms/typography/Title'
 import {
+  Button,
   FormSection,
   Input,
   Checkbox,
   Textarea,
   Select,
   Option,
-} from '../components/index'
+} from '../../atoms'
 
 import { cidades_estados } from '../rawdata/cidades-estados'
 import { initialData } from './data'

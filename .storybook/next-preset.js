@@ -20,6 +20,7 @@ module.exports = {
         path.resolve(__dirname, '../src/components/atoms'),
         path.resolve(__dirname, '../src/components/molecules'),
         path.resolve(__dirname, '../src/components/organisms'),
+        path.resolve(__dirname, '../src/components/forms'),
         path.resolve(__dirname, '../stories'),
       ],
       use: [
@@ -51,6 +52,7 @@ module.exports = {
         path.resolve(__dirname, '../src/components/atoms'),
         path.resolve(__dirname, '../src/components/molecules'),
         path.resolve(__dirname, '../src/components/organisms'),
+        path.resolve(__dirname, '../src/components/forms'),
       ],
       use: [
         'style-loader',
