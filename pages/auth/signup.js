@@ -1,10 +1,6 @@
 import Head from 'next/head'
-import Header from '../../regions/Header'
-import Footer from '../../regions/Footer/Footer'
-
-import styles from '../../styles/Page.module.css'
-import { SignUpForm } from '../../components/forms/SignUpForm/SignUpForm'
-import { BGChapado } from '../../components/experiments/Ilustras/BGChapado'
+import styles from '../../src/styles/Page.module.css'
+import { Header, Footer, SignUpForm, BGChapado } from '../../src/components'
 
 export default function SignUp() {
   return (

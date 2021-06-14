@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
+import { Header, Footer, Crypto3D } from '../src/components'
 
-import styles from '../styles/Page.module.css'
-import Crypto3D from '../components/experiments/Crypto3D/Crypto3D'
+import styles from '../src/styles/Page.module.css'
 
 export default function Home() {
   return (

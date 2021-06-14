@@ -1,6 +1,6 @@
-import { AuthProvider } from '../services/auth'
+import { AuthProvider } from '../src/services/auth'
 import { CookiesProvider } from 'react-cookie'
-import '../styles/globals.css'
+import '../src/styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,11 +1,7 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
+import { Header, Footer, GridObras, DescricaoObra } from '../src/components'
 
-import styles from '../styles/Page.module.css'
-import GridObras from '../components/GridObras'
-import DescricaoObra from '../components/DescricaoObra'
-
+import styles from '../src/styles/Page.module.css'
 
 export default function Colecoes() {
   return (

@@ -1,11 +1,8 @@
 import Head from 'next/head'
-import Header from '../regions/Header'
-import Footer from '../regions/Footer/Footer'
-import JogoCryptoBrick from '../components/experiments/JogoCryptoBrick/JogoCryptoBrick'
+import { Header, Footer, JogoCryptoBrick, Button } from '../src/components'
 
-import styles from '../styles/Page.module.css'
+import styles from '../src/styles/Page.module.css'
 import Link from 'next/link'
-import Button from '../components/Button/Button'
 
 export default function Sobre() {
   return (
@@ -16,7 +13,7 @@ export default function Sobre() {
       <Header />
       <main className={styles.flex_row}>
         <Link href="/colecoes">
-          <div className={styles.colecoes_btn}> 
+          <div className={styles.colecoes_btn}>
             <Button>acessar coleções</Button>
           </div>
         </Link>
