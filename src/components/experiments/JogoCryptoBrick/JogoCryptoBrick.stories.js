@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-import JogoCryptoBrick from './JogoCryptoBrick'
+import { JogoCryptoBrick } from './JogoCryptoBrick'
 
 export default {
   title: 'Cabra/Experimentos/JogoCryptoBrick',
   component: JogoCryptoBrick,
-};
+}
 
-const Template = () => <JogoCryptoBrick />;
+const Template = () => <JogoCryptoBrick />
 
-export const Main = Template.bind({});
+export const Main = Template.bind({})

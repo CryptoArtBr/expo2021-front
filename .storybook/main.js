@@ -12,6 +12,8 @@ module.exports = {
     '../src/components/organisms/**/*.stories.@(js|jsx|ts|tsx)',
     '../src/components/forms/**/*.stories.mdx',
     '../src/components/forms/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/components/experiments/**/*.stories.mdx',
+    '../src/components/experiments/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   presets: [path.resolve(__dirname, './next-preset.js')],
