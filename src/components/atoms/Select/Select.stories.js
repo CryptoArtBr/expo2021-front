@@ -3,7 +3,7 @@ import React from 'react'
 import { Select, Option } from './Select'
 
 export default {
-  title: 'Cabra/Componentes/Forms/Componentes/Select',
+  title: 'Cabra/Atoms/Select',
   component: Select,
 }
 

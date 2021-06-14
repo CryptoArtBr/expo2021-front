@@ -3,7 +3,7 @@ import React from 'react'
 import { Checkbox } from './Checkbox'
 
 export default {
-  title: 'Cabra/Componentes/Forms/Componentes/Checkbox',
+  title: 'Cabra/Atoms/Checkbox',
   component: Checkbox,
 }
 

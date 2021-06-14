@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import Logo from './Logo';
+import { Logo } from './Logo'
 
 export default {
-  title: 'Cabra/Componentes/Logo',
-  component: Logo
-};
+  title: 'Cabra/Atoms/Logo',
+  component: Logo,
+}
 
-const Template = ({...args}) => <Logo {...args} />;
+const Template = ({ ...args }) => <Logo {...args} />
 
-export const Main = Template.bind({});
+export const Main = Template.bind({})
 Main.args = {
-  href: "/"
-};
+  href: '/',
+}

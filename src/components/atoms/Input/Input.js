@@ -1,4 +1,4 @@
-import ExclamationBang from '../../../components/SVG/ExclamationBang'
+import ExclamationBang from '../SVG/ExclamationBang'
 import { Label } from '../Label/Label'
 import styles from './Input.module.css'
 

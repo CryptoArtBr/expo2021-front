@@ -3,7 +3,7 @@ import React from 'react'
 import { Input } from './Input'
 
 export default {
-  title: 'Cabra/Componentes/Forms/Componentes/Input',
+  title: 'Cabra/Atoms/Input',
   component: Input,
 }
 
