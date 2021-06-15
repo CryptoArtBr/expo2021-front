@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../../src/styles/Page.module.css'
-import { Header, Footer, SignUpForm, BGChapado } from '../../src/components'
+import { Header, Footer, ArtistForm, BGChapado } from '../../src/components'
 
 export default function SignUp() {
   return (
@@ -14,7 +14,7 @@ export default function SignUp() {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <SignUpForm />
+              <ArtistForm />
             </div>
           </div>
         </div>

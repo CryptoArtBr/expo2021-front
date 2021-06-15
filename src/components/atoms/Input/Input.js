@@ -9,9 +9,7 @@ export const Input = ({ children, label = '', error, ...props }) => (
       className={`${styles.input} ${error ? styles.input_error : ''}`}
       id={label}
       {...props}
-    >
-      {children}
-    </input>
+    />
     {error ? <ExclamationBang /> : null}
   </div>
 )

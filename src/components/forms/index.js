@@ -1,3 +1,3 @@
-import { SignUpForm } from './SignUpForm/SignUpForm'
+import { ArtistForm } from './ArtistForm/ArtistForm'
 
-export { SignUpForm }
+export { ArtistForm }
