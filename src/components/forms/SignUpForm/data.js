@@ -1,5 +1,5 @@
 export const initialData = {
-  name: '',
+  username: '',
   email: '',
   password: '',
 }

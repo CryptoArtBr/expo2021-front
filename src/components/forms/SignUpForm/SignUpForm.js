@@ -9,12 +9,12 @@ export const SignUpForm = ({ onSubmit }) => {
     <div>
       <Input
         label="nome"
-        value={formData.name}
+        value={formData.username}
         placeholder="seu nome"
         onChange={(e) =>
           setFormData({
             ...formData,
-            name: e.target.value,
+            username: e.target.value,
           })
         }
       />
