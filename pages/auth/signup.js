@@ -1,25 +1,45 @@
 import Head from 'next/head'
+import { useAuth } from '../../src/services/auth'
+
 import styles from '../../src/styles/Page.module.css'
-import { Header, Footer, ArtistForm, BGChapado } from '../../src/components'
+import { UserBox } from '../../src/components'
+import { Button, SignUpForm } from '../../src/components'
 
 export default function SignUp() {
+  const auth = useAuth()
+
   return (
     <div className={styles.container}>
       <Head>
         <title>🐐 CriptoArtBr 2021 🐐</title>
       </Head>
-      <Header />
       <main className={styles.main}>
-        <BGChapado />
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <ArtistForm />
-            </div>
-          </div>
-        </div>
+        <UserBox>
+          {auth.isAuthenticated ? (
+            <>
+              <p>Olá {auth.user.user.username}</p>
+              <p>voce é {auth.user.user.role.name}</p>
+              <Button
+                onClick={() => {
+                  auth.signOut()
+                }}
+              >
+                sair
+              </Button>
+            </>
+          ) : (
+            <>
+              {auth.isError && <p>{auth.error.message}</p>}
+
+              <SignUpForm
+                onSubmit={(formData) => {
+                  auth.signUp(formData)
+                }}
+              />
+            </>
+          )}
+        </UserBox>
       </main>
-      <Footer />
     </div>
   )
 }

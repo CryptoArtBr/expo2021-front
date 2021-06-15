@@ -60,9 +60,7 @@ export const Header = ({
                   <Button onClick={() => signup(router)} type="secondary">
                     inscreva-se
                   </Button>
-                  <Button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-                    entrar
-                  </Button>
+                  <Button onClick={() => login(router)}>entrar</Button>
                 </>
               )}
             </div>
@@ -71,8 +69,7 @@ export const Header = ({
       </header>
       {!isAuthenticated && isDrawerOpen ? (
         <div className={styles.header_drawer}>
-          {' '}
-          <UserBox />{' '}
+          <UserBox />
         </div>
       ) : null}
     </>
