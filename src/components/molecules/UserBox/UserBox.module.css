@@ -4,6 +4,7 @@
   padding: var(--spacing-700) var(--spacing-800);
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.8);
+  width: 300px;
 }
 
 .user_box__collapsed {
