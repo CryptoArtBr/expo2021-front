@@ -9,6 +9,7 @@ const initialContext = {
   ...initialAuthState,
   signIn: stub,
   signOut: stub,
+  signUp: stub,
 }
 
 export const AuthContext = createContext(initialContext)

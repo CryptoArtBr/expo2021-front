@@ -8,6 +8,14 @@ export const signIn = ({ email, password }) => {
   })
 }
 
+export const signUp = ({ username, email, password }) => {
+  return axios.post(`${EXPO_BACKEND}/auth/local/register`, {
+    username,
+    email,
+    password,
+  })
+}
+
 export const signOut = () => {}
 
 export const onAuthStateChanged = () => {

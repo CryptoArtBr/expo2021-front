@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signIn as apiSignIn,
   signOut as apiSignOut,
+  signUp as apiSignUp,
 } from './auth-api'
 import { AuthContext } from './auth-context'
 import { useRouter } from 'next/router'
@@ -16,7 +17,9 @@ const CRYPTO_PERSON_COOKIE = 'crypto-person'
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialAuthState)
   const router = useRouter()
-  const [userCookie, setUserCookie, removeUserCookie] = useCookies([CRYPTO_PERSON_COOKIE]);
+  const [userCookie, setUserCookie, removeUserCookie] = useCookies([
+    CRYPTO_PERSON_COOKIE,
+  ])
 
   // Subscribe to user on mount
   // Because this sets state in the callback it will cause any
@@ -24,7 +27,10 @@ export const AuthProvider = ({ children }) => {
   // latest auth object.
   useEffect(() => {
     if (userCookie[CRYPTO_PERSON_COOKIE]) {
-      dispatch({ type: 'AUTHENTICATED', user: userCookie[CRYPTO_PERSON_COOKIE] })
+      dispatch({
+        type: 'AUTHENTICATED',
+        user: userCookie[CRYPTO_PERSON_COOKIE],
+      })
     }
   }, [])
 
@@ -35,7 +41,7 @@ export const AuthProvider = ({ children }) => {
       const user = data
 
       if (user) {
-        setUserCookie(CRYPTO_PERSON_COOKIE, user, {path: '/'})
+        setUserCookie(CRYPTO_PERSON_COOKIE, user, { path: '/' })
         dispatch({ type: 'AUTHENTICATED', user })
       } else {
         dispatch({ type: 'UNAUTHENTICATED' })
@@ -60,12 +66,31 @@ export const AuthProvider = ({ children }) => {
     router.push('/')
   }, [])
 
+  const signUp = useCallback(async (credentials) => {
+    dispatch({ type: 'LOADING' })
+
+    try {
+      const { data } = await apiSignUp(credentials)
+      const user = data
+
+      if (user) {
+        setUserCookie(CRYPTO_PERSON_COOKIE, user, { path: '/' })
+        dispatch({ type: 'AUTHENTICATED', user })
+      } else {
+        dispatch({ type: 'UNAUTHENTICATED' })
+      }
+    } catch (error) {
+      dispatch({ type: 'ERROR', error })
+    }
+  })
+
   return (
     <AuthContext.Provider
       value={{
         ...state,
         signIn,
         signOut,
+        signUp,
       }}
     >
       {children}
