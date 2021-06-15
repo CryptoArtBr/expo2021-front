@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useAuth } from '../../../services/auth'
 
 import { Button } from '../../atoms'
@@ -6,8 +5,6 @@ import { SignInForm } from '../../forms/SignInForm/SignInForm'
 import styles from './UserBox.module.css'
 
 export const UserBox = ({ open = true }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
   const auth = useAuth()
 
   if (auth.isAuthenticated) {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, FormSection, Input } from '../../atoms'
+import { Button, Input } from '../../atoms'
 import { initialData } from './data'
 
 export const SignInForm = ({ onSubmit }) => {
